@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 
 from generator.alerts import generate_alerts
+from generator.anomalies import expected_decisions, inject_anomalies
 from generator.audit import generate_audit_events
 from generator.config import GenConfig
 from generator.customers import generate_customers
@@ -17,9 +18,12 @@ from generator.verifications import derive_document_status, generate_verificatio
 class Dataset:
     tables: dict[str, list[dict]] = field(default_factory=dict)  # goes to DB and files
     profile: list[dict] = field(default_factory=list)            # internal helper only
+    reports: dict = field(default_factory=dict)                  # internal: completeness per customer
+    decisions: list[dict] = field(default_factory=list)          # GROUND TRUTH: expected statuses
+    ground_truth: list[dict] = field(default_factory=list)       # GROUND TRUTH: planted anomalies
 
 
-def build_all(cfg: GenConfig) -> Dataset:
+def build_all(cfg: GenConfig, with_anomalies: bool = False) -> Dataset:
     ds = Dataset()
     ds.tables["customer_types"] = customer_type_rows()
     requirements = ds.tables["kyc_requirements"] = requirement_rows()
@@ -29,7 +33,7 @@ def build_all(cfg: GenConfig) -> Dataset:
     # 3B: evidence
     documents = generate_documents(cfg, customers, ds.profile, requirements)
     verifications = generate_verifications(cfg, documents, customers)
-    derive_document_status(documents, verifications)       # status comes from verifications
+    derive_document_status(documents, verifications)
     links = generate_requirement_links(documents, ds.profile, requirements)
     ds.tables["documents"] = documents
     ds.tables["verifications"] = verifications
@@ -45,9 +49,14 @@ def build_all(cfg: GenConfig) -> Dataset:
     alerts, alert_resolved_at = generate_alerts(cfg, documents, verifications, links,
                                                 requirements, reviews)
     ds.tables["alerts"] = alerts
-    ds.tables["audit_events"] = generate_audit_events(
-        cfg, customers, documents, verifications, ratings, reviews,
-        alerts, alert_resolved_at, reports)
+    ds.reports = reports
+    ds.decisions = expected_decisions(customers, reports)     # computed BEFORE any injection
 
-    # 3E adds: anomaly injection + ground truth + exports
+    # 3E: plant anomalies BEFORE the audit trail, so every anomalous state has a history
+    if with_anomalies:
+        ds.ground_truth = inject_anomalies(cfg, ds.tables, reports)
+
+    ds.tables["audit_events"] = generate_audit_events(
+        cfg, customers, documents, ds.tables["verifications"], ratings, reviews,
+        alerts, alert_resolved_at, reports)
     return ds

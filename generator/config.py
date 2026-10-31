@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from datetime import date
 
-from app.core.enums import RiskLevel
+from app.core.enums import IssueType, RiskLevel
 
 # these volumes were defined in problem statement
 BASE_CUSTOMERS = 8_000
@@ -75,3 +75,13 @@ class GenConfig:
     @property
     def n_reviews(self) -> int:
         return min(self._scaled(BASE_REVIEWS), self.n_customers)
+
+# Anomaly injection (stage 3E): how many of each kind at scale = 1.0
+ANOMALY_BASE_COUNTS = {
+    IssueType.APPROVED_MISSING_EVIDENCE: 80,    # customers
+    IssueType.EXPIRED_BUT_VALID: 60,            # documents
+    IssueType.OWNERSHIP_OVER_100: 25,           # businesses
+    IssueType.REVIEW_CLOSED_NO_RESOLUTION: 40,  # review cases
+    IssueType.DUPLICATE_DOCUMENT: 30,           # PAIRS of documents (= 60 documents)
+    IssueType.MISSING_OWNERSHIP: 15,            # businesses
+}
