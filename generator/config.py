@@ -19,6 +19,26 @@ NAME_VARIANT_RATE = 0.06           # share of docs printed with a variant of the
 ADDRESS_BOUNDARY_RATE = 0.03       # share of address proofs issued exactly 90 days before submission
 VERIFICATION_FAIL_RATE = 0.02      # share of first checks that FAIL (bad scan etc.)
 FAIL_RESCAN_PASS_RATE = 0.50       # share of FAILs that pass after a re-scan
+# Ownership parameters
+OWNER_COUNT_MIX = {1: 15, 2: 35, 3: 30, 4: 20}   # owners per company (weights)
+PEP_RATE = 0.03                                  # share of owners flagged as PEP
+FOREIGN_OWNER_RATE = 0.30                        # owner nationality differs from customer country
+OWNER_CHANGE_RATE = 0.08                         # share of companies with an ownership change
+
+# Risk rating parameters
+RERATE_RATE = 0.20                               # share of customers re-rated after onboarding
+
+# Review parameters
+REVIEW_LEAD_DAYS = 30                            # a review case opens this many days before it is due
+LATE_CLOSE_MAX_DAYS = 20                         # a closed review may close this long after its due date
+REVIEW_IN_PROGRESS_SHARE = 0.60                  # of open reviews, share already started
+REVIEW_OPEN_PAST_DUE_RATE = {                    # share of past-due reviews still not closed
+    RiskLevel.HIGH: 0.08,
+    RiskLevel.MEDIUM: 0.12,
+    RiskLevel.LOW: 0.16,
+}
+
+REVIEWERS = [f"reviewer_{i:02d}" for i in range(1, 7)]   # compliance reviewers (synthetic)
 
 
 @dataclass(frozen=True)

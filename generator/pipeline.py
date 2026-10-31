@@ -4,6 +4,9 @@ from generator.config import GenConfig
 from generator.customers import generate_customers
 from generator.documents import generate_documents, generate_requirement_links
 from generator.master import customer_type_rows, requirement_rows
+from generator.owners import generate_owners
+from generator.ratings import generate_risk_ratings
+from generator.reviews import generate_reviews
 from generator.verifications import derive_document_status, generate_verifications
 
 
@@ -29,7 +32,11 @@ def build_all(cfg: GenConfig) -> Dataset:
     ds.tables["document_requirement_links"] = generate_requirement_links(
         documents, ds.profile, ds.tables["kyc_requirements"])
 
-    # 3C adds: beneficial_owners, risk_ratings, review_cases
-    # 3D adds: derived kyc_status, alerts, audit_events
+    # 3C: ownership, risk history, reviews
+    ds.tables["beneficial_owners"] = generate_owners(cfg, customers)
+    ds.tables["risk_ratings"] = generate_risk_ratings(cfg, customers, ds.profile)
+    ds.tables["review_cases"] = generate_reviews(cfg, customers, ds.profile)
+
+    # 3D adds: derived kyc_status + review resolution, alerts, audit_events
     # 3E adds: anomaly injection + ground truth
     return ds
