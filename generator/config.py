@@ -39,6 +39,8 @@ REVIEW_OPEN_PAST_DUE_RATE = {                    # share of past-due reviews sti
 }
 
 REVIEWERS = [f"reviewer_{i:02d}" for i in range(1, 7)]   # compliance reviewers (synthetic)
+# Alert parameters
+ALERT_ACK_AFTER_DAYS = 14    # an unresolved alert counts as acknowledged after this many days
 
 
 @dataclass(frozen=True)
