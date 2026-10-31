@@ -13,6 +13,12 @@ BASE_REVIEWS = 3_000
 COMPANY_SHARE_OF_BUSINESSES = 0.70   # rest are sole proprietors
 RISK_MIX = {RiskLevel.LOW: 0.60, RiskLevel.MEDIUM: 0.30, RiskLevel.HIGH: 0.10}
 COUNTRY_MIX = {"IN": 85, "US": 5, "GB": 5, "AE": 3, "SG": 3}
+OPTIONAL_SUBMISSION_RATE = 0.40    # share of customers who submit an optional doc
+RENEWAL_RATE = 0.75                # share of expired renewable docs that get renewed
+NAME_VARIANT_RATE = 0.06           # share of docs printed with a variant of the name
+ADDRESS_BOUNDARY_RATE = 0.03       # share of address proofs issued exactly 90 days before submission
+VERIFICATION_FAIL_RATE = 0.02      # share of first checks that FAIL (bad scan etc.)
+FAIL_RESCAN_PASS_RATE = 0.50       # share of FAILs that pass after a re-scan
 
 
 @dataclass(frozen=True)
