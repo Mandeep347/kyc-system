@@ -58,3 +58,15 @@ def name_match_score(name_a: str, name_b: str) -> float:
     """Similarity of two names on a 0-100 scale (case-insensitive)."""
     ratio = SequenceMatcher(None, name_a.lower(), name_b.lower()).ratio()
     return round(100 * ratio, 2)
+
+# Allowed lifecycle transitions per entity type, as (old_state, new_state).
+# Used by the validation suite now and by the API later.
+ALLOWED_TRANSITIONS = {
+    "CUSTOMER": {("PENDING", "UNDER_REVIEW"), ("UNDER_REVIEW", "APPROVED"),
+                 ("UNDER_REVIEW", "REJECTED"), ("APPROVED", "SUSPENDED")},
+    "DOCUMENT": {("PENDING", "VALID"), ("PENDING", "INVALID"),
+                 ("INVALID", "VALID"), ("VALID", "EXPIRED")},
+    "REVIEW_CASE": {("SCHEDULED", "IN_PROGRESS"), ("IN_PROGRESS", "CLOSED")},
+    "ALERT": {("OPEN", "ACKNOWLEDGED"), ("OPEN", "RESOLVED"),
+              ("ACKNOWLEDGED", "RESOLVED")},
+}
