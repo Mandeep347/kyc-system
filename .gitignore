@@ -4,3 +4,5 @@ __pycache__/
 .env
 output/
 node_modules/
+.pytest_cache/
+*.zip

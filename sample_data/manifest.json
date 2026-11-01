@@ -1,0 +1,128 @@
+{
+  "command": "python -m generator --scale 0.01 --seed 20261022 --as-of 2026-10-30",
+  "seed": 20261022,
+  "as_of": "2026-10-30",
+  "scale": 0.01,
+  "anomalies_injected": {
+    "APPROVED_MISSING_EVIDENCE": 1,
+    "EXPIRED_BUT_VALID": 1,
+    "OWNERSHIP_OVER_100": 1,
+    "REVIEW_CLOSED_NO_RESOLUTION": 1,
+    "DUPLICATE_DOCUMENT": 2,
+    "MISSING_OWNERSHIP": 1
+  },
+  "files": {
+    "csv/alerts.csv": {
+      "rows": 15,
+      "sha256": "f7b7b02c6ad309576776688745f5a9431b8703819489f35eab3fbd3414b94e83"
+    },
+    "csv/audit_events.csv": {
+      "rows": 862,
+      "sha256": "a99da0b3f45960df622763d4c275f850aa881b05dbefb6b7ae834a5a59a61387"
+    },
+    "csv/beneficial_owners.csv": {
+      "rows": 22,
+      "sha256": "4b6525eecf466232d826768f966b1a256aa2aa2a3f72ccfe93eedf7bf1cbb998"
+    },
+    "csv/customer_types.csv": {
+      "rows": 3,
+      "sha256": "c2083768269dbaf2b26e1fd797cf4bebd72ebeea554400e75ace3931e77384dd"
+    },
+    "csv/customers.csv": {
+      "rows": 80,
+      "sha256": "e9122eafa4d66ef8d54a44ef20e10521210714e6cc29ef9ba9ccbc572b827d0b"
+    },
+    "csv/document_requirement_links.csv": {
+      "rows": 200,
+      "sha256": "10b29270bc65f208080e392f141673cbdb13da8b4f8a5752dfee5449a4bf9ac5"
+    },
+    "csv/documents.csv": {
+      "rows": 200,
+      "sha256": "44f0fcb38c4783a06f3584234d8df7a0abd3edc73b7d1a7fb6ba021a3680b2b5"
+    },
+    "csv/kyc_requirements.csv": {
+      "rows": 31,
+      "sha256": "945ba046b4d3f8a14c66765e106ba2254b01d96626b7b3c03500ec7965d5c7d2"
+    },
+    "csv/review_cases.csv": {
+      "rows": 30,
+      "sha256": "f345a40ef59145765aaa26eb9ef3b968a9ce731441662e066d63afc97e8a28c4"
+    },
+    "csv/risk_ratings.csv": {
+      "rows": 98,
+      "sha256": "fa9a61659a7726bf9b31bf5ed2a4975ab7080a379c20f4fc3d54c9993ece2d59"
+    },
+    "csv/verifications.csv": {
+      "rows": 212,
+      "sha256": "75e4575c382f1ffbf4f12b7802d394d4da392d3aa33f38204953592ff19b7fd7"
+    },
+    "ground_truth/expected_decisions.csv": {
+      "rows": 80,
+      "sha256": "c1188031d6f8e68fb5f80d62165e359189b629418b1486a4ca1d5f99f25849a7"
+    },
+    "ground_truth/ground_truth.csv": {
+      "rows": 7,
+      "sha256": "7b0ef37ab9cb16fd98482748c473f30f45d2aba29bf14d9083e96a20f42abbf3"
+    },
+    "ground_truth/ground_truth.json": {
+      "rows": 7,
+      "sha256": "f72ea4cbc789bb174377f54784a07b125815d0974b106f2cd801f1023b0c48c0"
+    },
+    "json/alerts.json": {
+      "rows": 15,
+      "sha256": "bb1ae4d4268751af8a37d4dc83e5050db70f068b0116d2d221ef72dc77a43216"
+    },
+    "json/audit_events.json": {
+      "rows": 862,
+      "sha256": "eb74452deeb54c9b361387fef68d8ed5674999cce308ced961381d2e2807b363"
+    },
+    "json/beneficial_owners.json": {
+      "rows": 22,
+      "sha256": "2a2a2f3652b5aacd5d234cba63649ffa8858829c03b9ad9e570f3f16c8aa341e"
+    },
+    "json/customer_types.json": {
+      "rows": 3,
+      "sha256": "b3d010104a4052f2bbaccfef94e16a1629bd1bafbff4abde0e26856707122cd0"
+    },
+    "json/customers.json": {
+      "rows": 80,
+      "sha256": "38381c8ab79cdeb1047d156b3ae0077c99d766d3369700a35459990ced4169c9"
+    },
+    "json/document_requirement_links.json": {
+      "rows": 200,
+      "sha256": "06656683b29b129bc9ac615fe2ce19d6be88bc9deaa2b061fdafa3097b931247"
+    },
+    "json/documents.json": {
+      "rows": 200,
+      "sha256": "d0a981ef82664be73dc818f48a1be71bc2e6466905f80a1069f97c47620d253b"
+    },
+    "json/kyc_requirements.json": {
+      "rows": 31,
+      "sha256": "7b0a6f5d37d520af759b3f78d6b18dcbfc7af67226a652b9bf8b7450811768a0"
+    },
+    "json/review_cases.json": {
+      "rows": 30,
+      "sha256": "a843e94b5c45179470963c20eb8bc21499106dd656bbcd210e613af8a814b2c6"
+    },
+    "json/risk_ratings.json": {
+      "rows": 98,
+      "sha256": "8640e69f0ed0fef4bfeb18bc8dc7e361d86d47cb824ed7fa36bc0e3226182792"
+    },
+    "json/verifications.json": {
+      "rows": 212,
+      "sha256": "e9adf6c6edba59cf4c3a14b094d3382abbff3a910849f95c131f4cf82894c056"
+    },
+    "seed.sql": {
+      "rows": null,
+      "sha256": "02d125360aa57d5ade870b011ab4ee93033e43a4d6ea2b4f22bac0626c0842fc"
+    },
+    "source_manifest.json": {
+      "rows": null,
+      "sha256": "f9a3c1a57b9610fe2d972edbdeebe7015660551ff4ec04b89d942030bba15813"
+    }
+  },
+  "environment": {
+    "python": "3.12.0",
+    "faker": "40.44.0"
+  }
+}

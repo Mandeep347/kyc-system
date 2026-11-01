@@ -1,0 +1,8 @@
+ground_truth_id,issue_type,entity_type,entity_id,customer_id,expected_detection,details
+GT-000001,APPROVED_MISSING_EVIDENCE,CUSTOMER,CUS-000066,CUS-000066,"customers.kyc_status = 'APPROVED' AND completeness(customer, as_of_date) < 100%",status SUSPENDED -> APPROVED while missing: ID_PROOF=EXPIRED
+GT-000002,EXPIRED_BUT_VALID,DOCUMENT,DOC-CUS-000019-002,CUS-000019,documents.status = 'VALID' AND documents.expiry_date < as_of_date,PASSPORT expired on 2025-01-15 but status is VALID
+GT-000003,OWNERSHIP_OVER_100,CUSTOMER,CUS-000011,CUS-000011,SUM(ownership_pct) over ACTIVE beneficial_owners (effective_to IS NULL) > 100,active ownership totals 127.16% (extra owner holding 27.16%)
+GT-000004,REVIEW_CLOSED_NO_RESOLUTION,REVIEW_CASE,REV-CUS-000040-2026,CUS-000040,review_cases.status = 'CLOSED' AND resolution IS NULL,"closed on 2026-03-29, resolution was RELATIONSHIP_EXITED, now empty"
+GT-000005,DUPLICATE_DOCUMENT,DOCUMENT,DOC-CUS-000003-002,CUS-000003,same document_number on documents of 2 or more different customers,document_number G6144571 also used by DOC-CUS-000038-002 (CUS-000038)
+GT-000006,DUPLICATE_DOCUMENT,DOCUMENT,DOC-CUS-000038-002,CUS-000038,same document_number on documents of 2 or more different customers,document_number G6144571 also used by DOC-CUS-000003-002 (CUS-000003)
+GT-000007,MISSING_OWNERSHIP,CUSTOMER,CUS-000044,CUS-000044,business customer (requires_beneficial_owner) with no ACTIVE beneficial_owners,1 ownership row(s) removed

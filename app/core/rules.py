@@ -63,7 +63,9 @@ def name_match_score(name_a: str, name_b: str) -> float:
 # Used by the validation suite now and by the API later.
 ALLOWED_TRANSITIONS = {
     "CUSTOMER": {("PENDING", "UNDER_REVIEW"), ("UNDER_REVIEW", "APPROVED"),
-                 ("UNDER_REVIEW", "REJECTED"), ("APPROVED", "SUSPENDED")},
+                 ("UNDER_REVIEW", "REJECTED"), ("APPROVED", "SUSPENDED"),
+                 ("SUSPENDED", "APPROVED"),        # documents were renewed
+                 ("REJECTED", "UNDER_REVIEW")},    # customer resubmitted evidence
     "DOCUMENT": {("PENDING", "VALID"), ("PENDING", "INVALID"),
                  ("INVALID", "VALID"), ("VALID", "EXPIRED")},
     "REVIEW_CASE": {("SCHEDULED", "IN_PROGRESS"), ("IN_PROGRESS", "CLOSED")},

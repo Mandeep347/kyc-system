@@ -1,0 +1,5 @@
+[
+{"customer_type_id": "CT-01", "type_code": "INDIVIDUAL", "display_name": "Individual", "is_business": false, "requires_beneficial_owner": false},
+{"customer_type_id": "CT-02", "type_code": "SOLE_PROPRIETOR", "display_name": "Sole Proprietor", "is_business": true, "requires_beneficial_owner": true},
+{"customer_type_id": "CT-03", "type_code": "COMPANY", "display_name": "Company", "is_business": true, "requires_beneficial_owner": true}
+]

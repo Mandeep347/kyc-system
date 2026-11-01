@@ -1,0 +1,4 @@
+customer_type_id,type_code,display_name,is_business,requires_beneficial_owner
+CT-01,INDIVIDUAL,Individual,false,false
+CT-02,SOLE_PROPRIETOR,Sole Proprietor,true,true
+CT-03,COMPANY,Company,true,true

@@ -1,0 +1,6 @@
+{
+  "external_data_used": false,
+  "sources": [],
+  "provenance": "All records are synthetic, produced by `python -m generator` with Faker (locale en_IN) and Python's random module. No real people, companies or documents. No public dataset was downloaded or redistributed.",
+  "email_domain": "example.com (reserved by IETF, no real mailboxes)"
+}

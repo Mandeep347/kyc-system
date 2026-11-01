@@ -141,3 +141,22 @@ issue_type	varchar	enum IssueType
 entity_type, entity_id	varchar	the affected record
 customer_id	varchar	
 expected_detection	text	the rule that should catch it
+
+## Changes since the Phase 1 draft
+
+| # | Area | Final behaviour |
+|---|---|---|
+| 1 | Enums | Stored as `VARCHAR` plus a `CHECK` built from `app/core/enums.py` (not native Postgres ENUMs). |
+| 2 | Review resolution | "Required when CLOSED" is a business rule enforced by validation and by the write API, not by a DB constraint. The DB must be able to hold the planted anomaly. |
+| 3 | Ownership sum | Each row is checked 0 to 100 by the DB; the per-customer active total (must equal 100) is checked by validation. |
+| 4 | `document_number` | Indexed, not unique. Duplicates across customers are a planted anomaly. |
+| 5 | Lead times | `DOC_EXPIRING` lead times are 60/30/7 days, plus 90 for HIGH-risk requirements (stored per requirement). |
+| 6 | Document status | Never assigned directly. It is the result of the latest verification. The system itself adds an `EXPIRED_DOCUMENT` verification row when a passed document expires. |
+| 7 | Name mismatch | `NAME_MISMATCH` exactly when `name_match_score` < 85, decided by the system. It can never be overridden to `PASS`. |
+| 8 | Risk ratings | `risk_level` is derived from `risk_score` (CHECK constraint) and a partial unique index allows at most one current rating per customer. |
+| 9 | Customer lifecycle | `PENDING -> UNDER_REVIEW -> APPROVED/REJECTED`, `APPROVED -> SUSPENDED`, plus two transitions added in Phase 5B: `SUSPENDED -> APPROVED` (evidence renewed) and `REJECTED -> UNDER_REVIEW` (resubmission). |
+| 10 | Alert lifecycle | `OPEN -> ACKNOWLEDGED -> RESOLVED`, and `OPEN -> RESOLVED` directly (auto-resolved when a renewal passes or a late review closes). |
+| 11 | Alert types | `MISSING_EVIDENCE` and `OWNERSHIP_ERROR` exist in the enum but the baseline does not generate them; those conditions surface through `GET /exceptions`. |
+| 12 | Audit events | `customer_id` is a real FK (fast per-customer trail). `entity_type` + `entity_id` stay a soft reference. |
+| 13 | Ground truth | Two files: `ground_truth.csv/json` (planted anomalies, with an added `details` column) and `expected_decisions.csv` (the status the rules give each customer). Added issue type `MISSING_OWNERSHIP`. |
+| 14 | Append-only | Postgres triggers refuse UPDATE and DELETE on `verifications` and `audit_events`. |

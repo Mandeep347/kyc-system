@@ -1,0 +1,99 @@
+rating_id,customer_id,risk_level,risk_score,reason,rated_by,effective_from,effective_to
+RSK-000001,CUS-000001,LOW,19,Initial onboarding assessment,system,2023-07-31,
+RSK-000002,CUS-000002,LOW,21,Initial onboarding assessment,system,2026-09-28,
+RSK-000003,CUS-000003,LOW,8,Initial onboarding assessment,system,2026-01-19,
+RSK-000004,CUS-000004,LOW,17,Initial onboarding assessment,system,2023-05-26,
+RSK-000005,CUS-000005,MEDIUM,40,Initial onboarding assessment,system,2025-07-03,2026-02-08
+RSK-000006,CUS-000005,LOW,28,Enhanced due diligence completed,reviewer_05,2026-02-09,
+RSK-000007,CUS-000006,LOW,6,Initial onboarding assessment,system,2023-11-14,
+RSK-000008,CUS-000007,LOW,21,Initial onboarding assessment,system,2025-04-20,2026-09-24
+RSK-000009,CUS-000007,LOW,11,Periodic re-assessment,reviewer_01,2026-09-25,
+RSK-000010,CUS-000008,LOW,17,Initial onboarding assessment,system,2023-01-25,
+RSK-000011,CUS-000009,LOW,22,Initial onboarding assessment,system,2023-01-27,
+RSK-000012,CUS-000010,MEDIUM,38,Initial onboarding assessment,system,2024-12-28,2026-07-26
+RSK-000013,CUS-000010,LOW,16,Enhanced due diligence completed,reviewer_04,2026-07-27,
+RSK-000014,CUS-000011,LOW,1,Initial onboarding assessment,system,2023-10-12,
+RSK-000015,CUS-000012,MEDIUM,67,Initial onboarding assessment,system,2026-10-07,
+RSK-000016,CUS-000013,LOW,28,Initial onboarding assessment,system,2023-06-16,
+RSK-000017,CUS-000014,MEDIUM,48,Initial onboarding assessment,system,2025-09-13,
+RSK-000018,CUS-000015,LOW,32,Initial onboarding assessment,system,2026-01-03,
+RSK-000019,CUS-000016,LOW,0,Initial onboarding assessment,system,2024-10-04,
+RSK-000020,CUS-000017,MEDIUM,54,Initial onboarding assessment,system,2024-04-19,
+RSK-000021,CUS-000018,LOW,29,Initial onboarding assessment,system,2023-11-09,2026-08-17
+RSK-000022,CUS-000018,LOW,10,Periodic re-assessment,reviewer_03,2026-08-18,
+RSK-000023,CUS-000019,LOW,31,Initial onboarding assessment,system,2023-05-12,
+RSK-000024,CUS-000020,LOW,26,Initial onboarding assessment,system,2023-09-05,
+RSK-000025,CUS-000021,LOW,28,Initial onboarding assessment,system,2026-08-05,
+RSK-000026,CUS-000022,LOW,24,Initial onboarding assessment,system,2023-09-09,
+RSK-000027,CUS-000023,MEDIUM,61,Initial onboarding assessment,system,2026-09-01,
+RSK-000028,CUS-000024,LOW,23,Initial onboarding assessment,system,2024-08-18,
+RSK-000029,CUS-000025,LOW,2,Initial onboarding assessment,system,2026-05-09,
+RSK-000030,CUS-000026,LOW,7,Initial onboarding assessment,system,2026-07-29,
+RSK-000031,CUS-000027,MEDIUM,41,Initial onboarding assessment,system,2024-02-08,
+RSK-000032,CUS-000028,LOW,24,Initial onboarding assessment,system,2026-09-21,
+RSK-000033,CUS-000029,LOW,14,Initial onboarding assessment,system,2026-09-18,
+RSK-000034,CUS-000030,LOW,0,Initial onboarding assessment,system,2025-10-12,2026-10-11
+RSK-000035,CUS-000030,LOW,11,High-risk jurisdiction exposure,reviewer_03,2026-10-12,
+RSK-000036,CUS-000031,LOW,23,Initial onboarding assessment,system,2023-08-18,
+RSK-000037,CUS-000032,LOW,33,Initial onboarding assessment,system,2023-09-02,2024-04-09
+RSK-000038,CUS-000032,LOW,4,Periodic re-assessment,reviewer_05,2024-04-10,
+RSK-000039,CUS-000033,MEDIUM,41,Initial onboarding assessment,system,2025-06-15,2025-11-13
+RSK-000040,CUS-000033,LOW,19,Periodic re-assessment,reviewer_05,2025-11-14,
+RSK-000041,CUS-000034,MEDIUM,68,Initial onboarding assessment,system,2024-09-19,
+RSK-000042,CUS-000035,LOW,6,Initial onboarding assessment,system,2026-07-10,
+RSK-000043,CUS-000036,LOW,1,Initial onboarding assessment,system,2026-10-13,
+RSK-000044,CUS-000037,MEDIUM,38,Initial onboarding assessment,system,2026-03-22,
+RSK-000045,CUS-000038,LOW,23,Initial onboarding assessment,system,2023-01-08,2024-01-14
+RSK-000046,CUS-000038,LOW,8,Enhanced due diligence completed,reviewer_06,2024-01-15,
+RSK-000047,CUS-000039,LOW,33,Initial onboarding assessment,system,2025-03-30,2026-08-22
+RSK-000048,CUS-000039,MEDIUM,53,Adverse media hit,reviewer_04,2026-08-23,
+RSK-000049,CUS-000040,LOW,2,Initial onboarding assessment,system,2023-03-14,2025-03-04
+RSK-000050,CUS-000040,LOW,30,High-risk jurisdiction exposure,reviewer_04,2025-03-05,
+RSK-000051,CUS-000041,LOW,0,Initial onboarding assessment,system,2025-04-01,
+RSK-000052,CUS-000042,LOW,4,Initial onboarding assessment,system,2025-04-26,
+RSK-000053,CUS-000043,LOW,13,Initial onboarding assessment,system,2023-05-26,
+RSK-000054,CUS-000044,LOW,6,Initial onboarding assessment,system,2023-10-22,
+RSK-000055,CUS-000045,LOW,25,Initial onboarding assessment,system,2023-07-08,
+RSK-000056,CUS-000046,HIGH,92,Initial onboarding assessment,system,2026-03-28,
+RSK-000057,CUS-000047,MEDIUM,60,Initial onboarding assessment,system,2026-03-18,
+RSK-000058,CUS-000048,MEDIUM,64,Initial onboarding assessment,system,2026-09-19,
+RSK-000059,CUS-000049,LOW,1,Initial onboarding assessment,system,2025-10-07,2025-12-16
+RSK-000060,CUS-000049,LOW,21,Unusual transaction pattern,reviewer_03,2025-12-17,
+RSK-000061,CUS-000050,MEDIUM,61,Initial onboarding assessment,system,2025-05-26,
+RSK-000062,CUS-000051,MEDIUM,47,Initial onboarding assessment,system,2023-11-09,2025-12-23
+RSK-000063,CUS-000051,LOW,25,Periodic re-assessment,reviewer_04,2025-12-24,
+RSK-000064,CUS-000052,LOW,7,Initial onboarding assessment,system,2024-11-15,
+RSK-000065,CUS-000053,HIGH,99,Initial onboarding assessment,system,2025-05-26,
+RSK-000066,CUS-000054,LOW,30,Initial onboarding assessment,system,2024-06-15,2025-12-26
+RSK-000067,CUS-000054,LOW,8,Enhanced due diligence completed,reviewer_03,2025-12-27,
+RSK-000068,CUS-000055,LOW,4,Initial onboarding assessment,system,2023-01-18,
+RSK-000069,CUS-000056,MEDIUM,50,Initial onboarding assessment,system,2024-02-27,
+RSK-000070,CUS-000057,MEDIUM,35,Initial onboarding assessment,system,2026-01-07,2026-03-18
+RSK-000071,CUS-000057,LOW,20,Enhanced due diligence completed,reviewer_04,2026-03-19,
+RSK-000072,CUS-000058,HIGH,85,Initial onboarding assessment,system,2026-08-29,
+RSK-000073,CUS-000059,LOW,8,Initial onboarding assessment,system,2023-03-29,
+RSK-000074,CUS-000060,LOW,3,Initial onboarding assessment,system,2024-12-24,
+RSK-000075,CUS-000061,HIGH,87,Initial onboarding assessment,system,2025-07-07,
+RSK-000076,CUS-000062,MEDIUM,37,Initial onboarding assessment,system,2025-08-08,
+RSK-000077,CUS-000063,LOW,31,Initial onboarding assessment,system,2025-03-19,
+RSK-000078,CUS-000064,LOW,0,Initial onboarding assessment,system,2024-04-08,2025-03-01
+RSK-000079,CUS-000064,LOW,1,Adverse media hit,reviewer_06,2025-03-02,
+RSK-000080,CUS-000065,MEDIUM,46,Initial onboarding assessment,system,2025-09-18,
+RSK-000081,CUS-000066,LOW,3,Initial onboarding assessment,system,2023-09-29,
+RSK-000082,CUS-000067,MEDIUM,36,Initial onboarding assessment,system,2026-09-12,
+RSK-000083,CUS-000068,LOW,15,Initial onboarding assessment,system,2025-09-18,
+RSK-000084,CUS-000069,LOW,9,Initial onboarding assessment,system,2023-01-23,
+RSK-000085,CUS-000070,LOW,0,Initial onboarding assessment,system,2025-01-22,2025-09-17
+RSK-000086,CUS-000070,LOW,17,Unusual transaction pattern,reviewer_06,2025-09-18,
+RSK-000087,CUS-000071,MEDIUM,68,Initial onboarding assessment,system,2026-06-05,
+RSK-000088,CUS-000072,LOW,23,Initial onboarding assessment,system,2025-06-14,
+RSK-000089,CUS-000073,LOW,18,Initial onboarding assessment,system,2024-07-04,
+RSK-000090,CUS-000074,MEDIUM,38,Initial onboarding assessment,system,2026-07-06,
+RSK-000091,CUS-000075,MEDIUM,44,Initial onboarding assessment,system,2026-07-27,
+RSK-000092,CUS-000076,LOW,4,Initial onboarding assessment,system,2025-09-15,
+RSK-000093,CUS-000077,LOW,31,Initial onboarding assessment,system,2026-01-25,
+RSK-000094,CUS-000078,HIGH,82,Initial onboarding assessment,system,2026-10-13,
+RSK-000095,CUS-000079,HIGH,82,Initial onboarding assessment,system,2025-08-15,2025-09-28
+RSK-000096,CUS-000079,MEDIUM,58,Periodic re-assessment,reviewer_05,2025-09-29,
+RSK-000097,CUS-000080,LOW,14,Initial onboarding assessment,system,2023-09-24,2024-02-27
+RSK-000098,CUS-000080,LOW,6,Enhanced due diligence completed,reviewer_05,2024-02-28,
