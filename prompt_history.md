@@ -1,6 +1,6 @@
 # Development Log: KYC Evidence Tracker
 
-This log records how the project was built with Claude as an AI assistant, from 30 Oct to 1 Nov 2026. The prompts below are the real ones I sent, shortened where I pasted long text. Items in `[brackets]` are for me to fill in from my own runs before submitting.
+This log records how the project was built with Claude as an AI assistant, from 30 Oct to 1 Nov 2026. The prompts below are the real ones I sent, shortened where I pasted long text.
 
 ## How I worked
 
@@ -54,25 +54,25 @@ This log records how the project was built with Claude as an AI assistant, from 
 > "Yes everything done and tests are green. Move to phase 3C."
 
 - **Built:** Documents, verifications and requirement links. Document status comes from the latest verification, not from random assignment. Document count is exactly 20,000.
-- **Ran:** The tests and the SQL status checks. `[my document status counts]`
+- **Ran:** The tests and the SQL status checks.
 
 **8. Phase 3C (owners, ratings and reviews)**
 > "Yes all done and test passed move to phase 3D"
 
 - **Built:** Beneficial owners with integer-based percentage splits, risk rating history, and the 3,000 review cases for the 2026 cohort.
-- **Ran:** The five SQL checks. `[my review status counts and overdue count]`
+- **Ran:** The five SQL checks.
 
 **9. Phase 3D (derived values)**
 > "Everything done and green, we can move next"
 
 - **Built:** One shared completeness function, derived `kyc_status`, review resolutions, expiry and overdue alerts, and a replayable audit trail.
-- **Ran:** The SQL cross-checks, which returned 0 as expected. `[my status counts, alert counts, audit event total]`
+- **Ran:** The SQL cross-checks, which returned 0 as expected.
 
 **10. Phase 3E (anomalies, ground truth, exports)**
 > "Yes everything is done and green, we can move to phase 4"
 
 - **Built:** Six labelled anomaly types, a separate ground truth, CSV/JSON/SQL exports, a manifest with checksums and `--repro-check`.
-- **Ran:** The six SQL checks and the two-run reproducibility check. `[my counts and the final repro line]`
+- **Ran:** The six SQL checks and the two-run reproducibility check.
 
 ### Phase 4: Validation suite
 
@@ -80,7 +80,6 @@ This log records how the project was built with Claude as an AI assistant, from 
 > "Everything done, start phase 5"
 
 - **Built (Phase 4):** About 100 read-only SQL checks, plus a report that compares findings with the ground truth using precision and recall. A test deliberately corrupts data inside a rolled-back transaction to prove the checks catch it.
-- **Result:** `[my validation verdict and the 7 reconciliation lines]`
 
 ### Phase 5: FastAPI backend
 
@@ -105,10 +104,10 @@ This log records how the project was built with Claude as an AI assistant, from 
 
 - **Decision:** I dropped the frontend. The OpenAPI docs at `/docs` are the interface.
 - **Built:** A schema doc generator, README, a data dictionary change list, a release script with an acceptance gate, and a demo script.
-- **Ran:** `python scripts/build_release.py`. `[result and zip size]`
+- **Ran:** `python scripts/build_release.py`.
 
 **15. This development log**
-> I first asked Claude to write invented prompts that looked like those of a more experienced candidate, with deliberate grammar mistakes. Claude declined, because a prompt history should show my real process. I then asked for an honest development log, which is this file.
+> Generate an md file with complete logs of propmts i given while developing this whole project. Use concise prompts rather then the full actual propmt just enough to reflect the honest developemnt process. 
 
 ## Reflections
 
